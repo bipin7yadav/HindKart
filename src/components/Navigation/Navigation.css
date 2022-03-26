@@ -1,0 +1,47 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 1rem 0 1rem;
+    color: white;
+    background-color: black;
+}
+
+.cartWish{
+    display: flex;
+    justify-content: space-between;
+    width:30vw;
+}
+
+.btn{
+    border-radius: 5px;
+    margin:7px 0 7px 0;
+}
+
+.search{
+    justify-content: center;
+    height:2.5rem;
+    width:30vw;
+    align-items: center;
+    border-radius: 5px;
+    color:black;
+    background-color:white;
+}
+
+
+/* new Header */
+
+.Rel{
+    position: relative;
+}
+.badge {
+    font-size: .8rem;
+    background-color:blue;
+    padding: .5rem .5rem;
+    border-radius: 50%;
+    color: white;
+    position: absolute;
+    left:1rem;
+    top: -0.4rem;
+}
+

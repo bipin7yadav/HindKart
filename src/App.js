@@ -1,41 +1,24 @@
-import "./App.css";
-import logo from "./logo.png";
+import './App.css';
+import { Routes, Route } from 'react-router-dom';
+
+import {AllProducts,Auth,Home,MyCart,SingleProduct,Wishlist} from "./pages/index"
+
+import {Footer,Navigation} from "./components/index"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} alt="mockBee logo" width="180" height="180" />
-        <h1 className="brand-title">
-          Welcome to <span>mockBee!</span>
-        </h1>
-        <p className="brand-description">
-          Get started by editing <code>src/App.js</code>
-        </p>
-        <div className="links">
-          <a
-            href="https://mockbee.netlify.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Explore mockBee
-          </a>
-          <a
-            href="https://mockbee.netlify.app/docs/api/introduction"
-            target="_blank"
-            rel="noreferrer"
-          >
-            API Documentation
-          </a>
-          <a
-            href="https://github.com/neogcamp/mockBee"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Contribute
-          </a>
-        </div>
-      </header>
+      <Navigation/>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/Auth" element={<Auth/>}/>
+        <Route path="/AllProducts" element={<AllProducts/>} />
+        <Route path="/MyCart" element={<MyCart/>} />
+        <Route path="/SingleProduct" element={<SingleProduct/>} />
+        <Route path="/Wishlist" element={<Wishlist/>} />
+      </Routes>
+        <Footer/>
+      
     </div>
   );
 }

@@ -1,0 +1,18 @@
+:root{
+    --black:black;
+    --white:white;
+    --darkgray:darkgray;
+    --orange:orange;
+    --blue:blue;
+    --grey:grey;
+    --aqua:aqua;
+}
+.footer-containet {
+    background-color: var(--black);
+    color: var(--white);
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 2px solid;
+    line-height: 2rem;
+    padding: 0 0 1rem  0;
+}
