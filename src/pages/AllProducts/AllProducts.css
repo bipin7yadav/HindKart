@@ -1,0 +1,50 @@
+.product-page{
+    display: flex;
+    justify-content: space-between;
+    gap: .3rem;
+}
+
+.filters{
+    background-color: aqua;
+    width: 20vw;
+    padding: 0rem .3rem .3rem .3rem;
+}
+
+.product{
+    width: 80vw;
+    padding: 0rem .3rem .3rem .3rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.clear{
+    display: flex;
+    justify-content: space-between;
+    margin:0rem 1rem;
+
+}
+
+.card{
+    border: 2px solid red;
+    height:20rem;
+    margin: 3rem;
+    display: grid;
+    grid-template-columns: 16rem 1fr;
+    width: 40%;
+}
+
+.imag{
+    height: 91.5%;
+    width: 16rem;
+    border: 2px solid pink;
+}
+.details{
+    padding:0 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn{
+    width: 100%;
+}
+
