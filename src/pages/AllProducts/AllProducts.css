@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-between;
     gap: .3rem;
-    /* height: 72vh; */
 }
 
 .filters{
@@ -32,12 +31,8 @@
     display: grid;
     grid-template-columns: 16rem 1fr;
     width: 40%;
-
-    /* justify-content: space-between; */
 }
-/* .pro-img{
-    border: 2px solid blue;
-} */
+
 .imag{
     height: 91.5%;
     width: 16rem;
@@ -53,34 +48,3 @@
     width: 100%;
 }
 
-/* .pro-img{
-    height: 100%;
-    width:50%;
-    box-sizing: border-box;
-    border: 1px solid blue;
-    background-color: black;
-    padding: 5rem;
-}
-.details{
-    margin: .5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.imag{
-    height:100%;
-    width: 100%;
-    width: auto;
-    object-fit: contain;
-}
-
-.btn-container{
-    background-color: red;
-    width: 100%;
-} */
-
-/* button{
-    width: 130%;
-    padding: 0 3rem;
-} */
