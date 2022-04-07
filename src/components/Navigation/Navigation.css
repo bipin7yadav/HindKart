@@ -1,3 +1,6 @@
+*{
+    text-decoration: none;
+}
 .header{
     display: flex;
     flex-direction: row;
@@ -5,6 +8,9 @@
     padding: 0px 1rem 0 1rem;
     color: white;
     background-color: black;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .cartWish{
@@ -27,7 +33,13 @@
     color:black;
     background-color:white;
 }
-
+.WebName{
+    color: aliceblue;
+    font-size: 1.4rem;
+    width: max-content;
+    height: 1.9rem;
+    
+}
 
 /* new Header */
 
