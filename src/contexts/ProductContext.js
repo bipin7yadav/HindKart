@@ -5,6 +5,8 @@ const productList = createContext();
 
 const ProductListProvider = ({children  }) => {
 
+
+    // products
     const [product, setProduct ] = useState([]);
 
     useEffect(()=>{
@@ -17,6 +19,25 @@ const ProductListProvider = ({children  }) => {
         }
         })();
     },[]);
+
+
+    //categories
+
+    const [category,setCategory]=useState([]);
+
+    useEffect(()=>{
+        (async()=>{
+            try{const response=await axios.get("/api/categories")
+            setCategory(response.data.categories)
+        }
+        catch(error){
+            console.log(error)
+        }
+        })();
+    },[])
+
+
+
 
     const FilterReducer = (state,action) =>{
         switch(action.type){
@@ -57,39 +78,19 @@ const ProductListProvider = ({children  }) => {
             };
             case "CLEAR":{
                 return{
-                    byStock:false,byFastDelivery:false,byRating:0,sort:null            
+                    byStock:false,byFastDelivery:false,byRating:0,sort:null,category:[]            
                 }
             };
-            case "SHIRTS":{
-                return{
-                    ...state,
-                    byShirt:action.payload
+            case "CATEGORY":{
+                if(!state.category.includes(action.payload)){
+                    return {...state, category:[...state.category,action.payload]};
+                }else{
+                    const array = state.category.filter(data => data !==action.payload);
+                    return {...state,category:array};
                 }
+                  
             }
-            case "TSHIRT":{
-                return{
-                    ...state,
-                    byTshirt:action.payload
-                }
-            }
-            case "SHORTS":{
-                return{
-                    ...state,
-                    byShorts:action.payload
-                }
-            }
-            case "TROUSERS":{
-                return{
-                    ...state,
-                    byTrousers:action.payload
-                }
-            }
-            case "SHOES":{
-                return{
-                    ...state,
-                    byShoe:action.payload
-                }
-            }
+        
             default :
                 return state;
         }
@@ -100,21 +101,67 @@ const ProductListProvider = ({children  }) => {
         byFastDelivery:false,
         byRating:0,
         bySort:null,
-        byShirt:null,
-        byTshirt:null,
-        byShorts:null,
-        byTrousers:null,
-        byShoe:null,
+        category:[],
         byRating:null,
         bySearch:"",
-        byRange:null
+        byRange:null,
+        // byCategories:{short:false,tshirt:false,shirt:false,trouser:false,shoe:false}
 
     });
 
-    
+    const cartReducer = (state,action)=>{
+        console.log("Vvv",action.type)
+        console.log("cart",state.cart);
+        switch (action.type){
+            case "ADD_TO_CART":
+                return{
+                    ...state,
+                    cart :[...state.cart,{...action.payload}]
+                };
+            case "REMOVE_FROM_CART":
+                const newCartArr = state.cart.filter(data => data.id !== action.payload.id)
+                console.log("ddddddd",newCartArr)
+                return{
+                    ...state,
+                    cart:newCartArr}
+            
+             
+            default:
+                return state;
+        }
+    }
+
+    const wishReducer = (state,action)=>{
+        switch (action.type){
+            case "ADD_TO_WISHLIST":{
+                return{
+                    ...state,wish :[...state.wish,{...action.payload}]
+                }
+            };
+            case "MOVE_TO_CART":{
+                return{
+                    ...state,
+                    wish:[...action.payload]
+                }
+            }
+            default:
+                return state;
+        }
+    }
+
+    const [cartState,dispatchCart]=useReducer(cartReducer,{
+        // products:product,
+        cart :[],
+    })
+
+
+    const [wishState,dispatchWish]=useReducer(wishReducer,{
+        // products:product,
+        wish :[],
+    })
 
     return(
-         <productList.Provider value={{product,filterState,dispatchFilter}}>
+         <productList.Provider value={{product,category,filterState,dispatchFilter,cartState,dispatchCart,wishState,dispatchWish}}>
              {children}
          </productList.Provider>
     )

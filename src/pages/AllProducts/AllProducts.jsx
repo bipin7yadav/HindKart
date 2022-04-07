@@ -5,16 +5,26 @@ import { useProductListContext } from "../../contexts/ProductContext";
 
 
 
+
 function AllProducts() {
 
-    let { product, filterState: { bySort, byStock, byFastDelivery, byShirt, byTshirt, byShoe, byShorts, byTrousers, byRating, bySearch, byRange }, dispatchFilter, } = useProductListContext();
+    let { product, filterState: { bySort, byStock, byFastDelivery,category, byRating, bySearch, byRange }, dispatchFilter, dispatchCart, dispatchWish, cartState: { cart }, wishState: { wish } } = useProductListContext();
+
+    // const { short, tshirt, shirt, shoe, trouser } = byCategories
 
 
-
+    const arrayOfProducts = [
+        "Shorts",
+        "T-shirt",
+        "Shirt",
+        "Shoes",
+        "Trousers"
+        ]
 
     const transProducts = () => {
+
         let sortedProducts = product;
-        // console.log(sortedProducts,"cvghj")
+
 
         if (bySort) {
             sortedProducts = sortedProducts.sort((a, b) =>
@@ -39,20 +49,8 @@ function AllProducts() {
 
             sortedProducts = sortedProducts.filter((a => a.fastDelivery))
         }
-        if (byShirt) {
-            sortedProducts = sortedProducts.filter((a) => a.category === byShirt || a.category === byTshirt || a.category === byShoe || a.category === byShorts || a.category === byTrousers)
-        }
-        if (byTshirt) {
-            sortedProducts = sortedProducts.filter((a) => a.category === byTshirt || a.category === byShirt || a.category === byShoe || a.category === byShorts || a.category === byTrousers)
-        }
-        if (byShoe) {
-            sortedProducts = sortedProducts.filter((a) => a.category === byShoe || a.category === byTshirt || a.category === byShirt || a.category === byShorts || a.category === byTrousers)
-        }
-        if (byShorts) {
-            sortedProducts = sortedProducts.filter((a) => a.category === byShorts || a.category === byShoe || a.category === byTshirt || a.category === byShirt || a.category === byTrousers)
-        }
-        if (byTrousers) {
-            sortedProducts = sortedProducts.filter((a) => a.category === byTrousers || a.category === byShorts || a.category === byShoe || a.category === byTshirt || a.category === byShirt)
+        if (category[0]!==undefined) {
+            sortedProducts = sortedProducts.filter(data => category.includes(data.categoryName))
         }
 
         if (byRating) {
@@ -79,9 +77,10 @@ function AllProducts() {
                                 })
                             }}><h3>Clear</h3></Link>
                     </div>
+                    <hr />
                     <div>
-                        <h2>Sort By</h2>
                         <div>
+                            <h4>Sort By</h4>
                             <input type="radio" name="radio"
                                 onChange={() =>
                                     dispatchFilter({
@@ -111,13 +110,14 @@ function AllProducts() {
                     <div>
                         <div>
 
-                            <h2>Availability</h2>
+                            <h4>Availability</h4>
                             <input type="checkbox"
                                 onChange={() =>
                                     dispatchFilter({
                                         type: "STOCK",
                                     })
                                 }
+                                checked={byStock}
                             />
                             <label>Instock</label>
                         </div>
@@ -129,90 +129,52 @@ function AllProducts() {
                                         type: "DELIVERY",
                                     })
                                 }
+                                checked={byFastDelivery}
                             />
                             <label>Fast Delivery</label>
                         </div>
                     </div>
                     <div>
-                        <h2>Price</h2>
+                        <h4>Price</h4>
                         <div className="clear">
-                            <label>300</label>
-                            <label>{byRange}</label>
-                            <label> 5500</label>
+                            <label>₹300</label>
+                            <label>₹{byRange}</label>
+                            <label>₹5500</label>
                         </div>
-                        <input type="range" min="300" max="5500"
+                        <input className="clearRange" type="range" min="300" max="5500"
                             onChange={(e) => dispatchFilter({
                                 type: "RANGE",
                                 payload: e.target.value,
-                            })}
+                            })
+                            }
                         />
                     </div>
                     <div>
-                        <h2>Category</h2>
+                        <h4>Category</h4>
+
 
                         <div>
-                            <input type="checkbox"
-                                onChange={() =>
-                                    dispatchFilter({
-                                        type: "SHORTS",
-                                        payload: "Shorts"
-                                    })
-                                }
-                            />
-                            <label>Shorts</label>
-                        </div>
-
-                        <div>
-                            <input type="checkbox"
-                                onChange={() =>
-                                    dispatchFilter({
-                                        type: "TSHIRT",
-                                        payload: "T-shirt"
-                                    })
-                                }
-                            />
-                            <label>Tshirts</label>
-                        </div>
-
-                        <div>
-                            <input type="checkbox"
-                                onChange={() =>
-                                    dispatchFilter({
-                                        type: "SHIRTS",
-                                        payload: "Shirt"
-                                    })
-                                }
-                            />
-                            <label>Shirts</label>
-                        </div>
-
-                        <div>
-                            <input type="checkbox"
-                                onChange={() =>
-                                    dispatchFilter({
-                                        type: "SHOES",
-                                        payload: "Shoes"
-                                    })
-                                }
-                            />
-                            <label>Shoes</label>
-                        </div>
-
-                        <div>
-                            <input type="checkbox"
-                                onChange={() =>
-                                    dispatchFilter({
-                                        type: "TROUSERS",
-                                        payload: "Trousers"
-                                    })
-                                }
-                            />
-                            <label>Jeans&Trousers</label>
+                            {arrayOfProducts.map(product => {
+                                return(
+                                    <div>
+                                        <input type="checkbox"
+                                            onChange={() =>
+                                                dispatchFilter({
+                                                    type: "CATEGORY",
+                                                    payload: product
+                                                })
+                                            }
+                                            checked={category.includes(product)}
+                                        />
+                                        <label>{product}</label>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
 
                     <div>
-                        <h2>Rating</h2>
+                        <h4>Rating</h4>
 
                         <div>
                             <input type="radio" name="rating"
@@ -222,6 +184,7 @@ function AllProducts() {
                                         payload: 4,
                                     })
                                 }
+                                checked={byRating === 4}
                             />
                             <label>4 Rating & Above</label>
                         </div>
@@ -234,6 +197,7 @@ function AllProducts() {
                                         payload: 3,
                                     })
                                 }
+                                checked={byRating === 3}
                             />
                             <label>3 Rating & Above</label>
                         </div>
@@ -246,6 +210,7 @@ function AllProducts() {
                                         payload: 2,
                                     })
                                 }
+                                checked={byRating === 2}
                             />
                             <label>2 Rating & Above</label>
                         </div>
@@ -258,6 +223,7 @@ function AllProducts() {
                                         payload: 1,
                                     })
                                 }
+                                checked={byRating === 1}
                             />
                             <label>1 Rating & Above</label>
                         </div>
@@ -265,37 +231,66 @@ function AllProducts() {
 
                     </div>
                 </div>
+                <hr/>
 
                 <div>
-                    <div><h1>Products : {transProducts().length}</h1></div>
+                    <div className="productLength"><h1>Total Products Available : {transProducts().length}</h1></div>
                     <div className="product">
                         {
-                            transProducts().map((product) => {
+                            transProducts().map((product, index) => {
                                 const { _id, title, price, brand, image, inStock, fastDelivery, rating } = product;
                                 return (
-                                    <>
-                                        <div className="card" key={_id}>
-                                            <div className="pro-img">
-                                                <img src={image} className="imag"></img>
-                                            </div>
-                                            <div className="details">
-                                                <div>
-                                                    <h5>{title}</h5>
-                                                    <div>{brand}</div>
-                                                    <div>Rating : {rating}</div>
-                                                    <h6>Price :₹ {price}</h6>
-                                                    {inStock ? <h6>Instock</h6> : <h6>Outoff Stock</h6>}
-                                                    {fastDelivery ? <h6>FastDelivery</h6> : <h6>Minimum 3-4 Days</h6>}
-                                                </div>
-                                                <div className="btn-container">
-                                                    <button className="btn"
-                                                        disabled={!inStock}
-                                                    >Add To Cart</button>
-                                                </div>
-                                            </div>
 
+                                    <div className="card" key={_id}>
+                                        <div className="pro-img">
+                                            <img src={image} className="imag"></img>
                                         </div>
-                                    </>
+                                        <div className="details">
+                                            <div>
+                                                <h5>{title}</h5>
+                                                <div>{brand}</div>
+                                                <div>Rating : {rating}⭐</div>
+                                                <h6>Price :₹ {price}</h6>
+                                                {inStock ? <h6>Instock</h6> : <h6>Outoff Stock</h6>}
+                                                {fastDelivery ? <h6>FastDelivery</h6> : <h6>Minimum 3-4 Days</h6>}
+                                            </div>
+                                            <div className="btn-container">
+                                                {
+                                                    cart.some(i => i._id === _id) ? (
+                                                        <button className="btn">Added To The Cart</button>
+                                                    ) : (<button className="btn"
+                                                        onClick={() => {
+                                                            dispatchCart({
+                                                                type: "ADD_TO_CART",
+                                                                payload: product
+                                                            })
+                                                        }}
+                                                        disabled={!inStock}
+                                                    >Add To Cart</button>)
+                                                }
+
+                                                {
+                                                    wish.some(i => i._id === _id) ? (
+                                                        <button className="btn">Added To Wishlist</button>
+                                                    ) : (
+                                                        <button className="btn"
+                                                            onClick={() => {
+                                                                dispatchWish({
+                                                                    type: "ADD_TO_WISHLIST",
+                                                                    payload: product
+                                                                })
+
+                                                            }}
+                                                        >Add To Wishlist</button>
+                                                    )
+                                                }
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
                                 )
                             })
                         }
