@@ -1,0 +1,57 @@
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border:2px solid black;
+    height:50vh;
+    margin:1rem ;
+    text-align: center;
+    width: 25rem;
+    padding: .3rem;
+}
+
+.signup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.textbox{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    width: 20rem;
+    margin-left: 3rem;
+}
+
+.textbox2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.terms{
+    margin: 0 4rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.login{
+    display: flex;
+    justify-content: space-evenly;
+}
+#submit{
+    width: 10rem;
+    padding: .5rem 0;
+    margin-left: 7.2rem;
+}
+.login{
+    margin-left: 10.7rem;
+    padding: .5rem;
+}
+.login-input{
+    height: 2rem;
+}
+.btn-login{
+    padding: .3rem;
+}

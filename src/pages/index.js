@@ -8,9 +8,10 @@ import { SingleProduct } from "./SingleProduct/SingleProduct";
 
 import { Wishlist } from "./WishList/WishList";
 
-import { Auth } from "./Auth/Auth";
+import { Login } from "./Auth/login";
 
-// import { SignUp } from "./Auth/SignUp";
+import { SignUp } from "./Auth/SignUp";
 
 
-export {AllProducts,Home,MyCart,SingleProduct,Wishlist,Auth}
+
+export {AllProducts,Home,MyCart,SingleProduct,Wishlist,SignUp,Login}
