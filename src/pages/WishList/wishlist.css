@@ -1,4 +1,9 @@
 .wishlist{
-    /* text-align: center; */
-    margin-left: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+
+.center-text{
+    margin-left: 40%;
 }

@@ -40,6 +40,9 @@ const ProductListProvider = ({children  }) => {
 
 
     const FilterReducer = (state,action) =>{
+        console.log(action.type,"type...");
+        console.log(action.payload, "payload...");
+
         switch(action.type){
             case "SORT":{
                 return{
@@ -82,6 +85,9 @@ const ProductListProvider = ({children  }) => {
                 }
             };
             case "CATEGORY":{
+                // console.log(action.type,"in Category type");
+                // console.log(action.payload,"in payload type");
+
                 if(!state.category.includes(action.payload)){
                     return {...state, category:[...state.category,action.payload]};
                 }else{

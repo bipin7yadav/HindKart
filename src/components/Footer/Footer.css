@@ -8,7 +8,7 @@
     --aqua:aqua;
 }
 .footer-containet {
-    background-color: var(--black);
+    background-color: rgb(44, 117, 181);
     color: var(--white);
     display: flex;
     justify-content: space-evenly;
@@ -16,3 +16,4 @@
     line-height: 2rem;
     padding: 0 0 1rem  0;
 }
+

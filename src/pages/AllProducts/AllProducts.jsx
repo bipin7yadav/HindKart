@@ -1,6 +1,7 @@
 import "./AllProducts.css";
 import { Link } from "react-router-dom";
 import { useProductListContext } from "../../contexts/ProductContext";
+import { toast } from "react-toastify";
 
 
 
@@ -19,7 +20,7 @@ function AllProducts() {
         "Shirt",
         "Shoes",
         "Trousers"
-        ]
+        ];
 
     const transProducts = () => {
 
@@ -260,6 +261,7 @@ function AllProducts() {
                                                         <button className="btn">Added To The Cart</button>
                                                     ) : (<button className="btn"
                                                         onClick={() => {
+                                                            toast.success("added to cart")
                                                             dispatchCart({
                                                                 type: "ADD_TO_CART",
                                                                 payload: product
@@ -271,14 +273,16 @@ function AllProducts() {
 
                                                 {
                                                     wish.some(i => i._id === _id) ? (
-                                                        <button className="btn">Added To Wishlist</button>
+                                                        <Link to="/Wishlist"><button className="btn">Visit Wishlist</button></Link>
                                                     ) : (
                                                         <button className="btn"
                                                             onClick={() => {
+                                                                toast.success("added to wish list")
                                                                 dispatchWish({
                                                                     type: "ADD_TO_WISHLIST",
                                                                     payload: product
                                                                 })
+
 
                                                             }}
                                                         >Add To Wishlist</button>

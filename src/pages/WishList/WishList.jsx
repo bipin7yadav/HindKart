@@ -1,30 +1,33 @@
 import { useState } from "react"
+import { toast } from "react-toastify"
 import { useProductListContext } from "../../contexts/ProductContext"
 import "./wishlist.css"
 
 function Wishlist() {
 
-    const { wishState: { wish },cartState:{cart},dispatchCart,dispatchWish } = useProductListContext()
+    const { wishState: { wish }, cartState: { cart }, dispatchCart, dispatchWish } = useProductListContext()
     console.log(wish, "wish")
 
-    const [wishItem,setWishItem]=useState(wish)
+    const [wishItem, setWishItem] = useState(wish)
 
-    function deleteWishItem(id){
-        const updatedWishlist =wish.filter((a,index)=>index !== id)
+    function deleteWishItem(id) {
+        const updatedWishlist = wish.filter((a, index) => index !== id)
 
         dispatchWish({
-            type:"MOVE_TO_CART",
-            payload:updatedWishlist
+            type: "MOVE_TO_CART",
+            payload: updatedWishlist
         })
         setWishItem(updatedWishlist)
 
-        console.log(updatedWishlist,"updatrd")
+        console.log(updatedWishlist, "updatrd")
     }
 
     return (<>
-        <div className="wishlist"><h1>Items In  Wishlist: {wish.length} </h1></div>
+        <div className="wishlist">
+
         {
-            wishItem.map((product,index) => {
+            wishItem.length>0?
+            wishItem.map((product, index) => {
                 const { _id, title, price, brand, image, inStock, fastDelivery, rating } = product;
                 return (
 
@@ -45,21 +48,19 @@ function Wishlist() {
                                 <button className="btn"
                                     onClick={() => {
                                         // deleteWishItem(index)
-                                        const checkCart=cart.some(item=>item._id ===product._id)
-                                        if(!checkCart){
+                                        const checkCart = cart.some(item => item._id === product._id)
+                                        if (!checkCart) {
+                                            toast.success("moved to cart")
                                             dispatchCart({
                                                 type: "ADD_TO_CART",
                                                 payload: product
                                             })
                                             deleteWishItem(index)
+                                        } else {
+                                            toast.info("allready in cart")
                                         }
-                                        // dispatchCart({
-                                        //     type: "ADD_TO_CART",
-                                        //     payload: product
-                                        // })
-                                        // deleteWishItem(index)
                                     }}
-                                disabled={!inStock}
+                                    disabled={!inStock}
                                 >Move To Cart</button>
                             </div>
                         </div>
@@ -67,8 +68,9 @@ function Wishlist() {
                     </div>
 
                 )
-            })
+            }) : <h1 className="center-text90">Add Items To Your Wish List</h1>
         }
+        </div>
     </>)
 
 }

@@ -5,18 +5,20 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0px 1rem 0 1rem;
     color: white;
-    background-color: black;
+    padding: 0 .5rem 0 .5rem;
+    background-color: rgb(44, 117, 181);
     position: sticky;
     top: 0;
     z-index: 1;
+    height: max-content;
 }
 
 .cartWish{
+    margin-top: .3rem;
     display: flex;
-    justify-content: space-between;
-    width:30vw;
+    justify-content: space-around;
+    width:15vw;
 }
 
 .btn{
@@ -26,7 +28,7 @@
 
 .search{
     justify-content: center;
-    height:2.5rem;
+    height:2rem;
     width:30vw;
     align-items: center;
     border-radius: 5px;
@@ -48,12 +50,22 @@
 }
 .badge {
     font-size: .8rem;
-    background-color:blue;
-    padding: .5rem .5rem;
+    background-color:darkblue;
+    padding: .3rem .3rem;
     border-radius: 50%;
     color: white;
     position: absolute;
     left:1rem;
-    top: -0.4rem;
+    top: -0.1rem;
+}
+
+.icons{
+    color: aliceblue;
+}
+
+.searchbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 

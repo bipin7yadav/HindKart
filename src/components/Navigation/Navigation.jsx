@@ -1,7 +1,8 @@
 import "./Navigation.css";
 import {Link} from "react-router-dom";
-// import { Auth } from "./pages/index";
 import {useProductListContext} from "../../contexts/ProductContext"
+import { MdAccountCircle , MdFavorite } from "react-icons/md";
+import { ImCart } from "react-icons/im";
 
 
 function Navigation(){
@@ -10,10 +11,10 @@ function Navigation(){
     return<>
 
     <div className="header">
-        <div className="btn">
+        <div className="">
             <Link to="/"><h3 className="WebName"> 🅷🅸🅽🅳🅺🅰🆁🆃 </h3></Link>
         </div>
-        <div className="btn" >
+        <div className="searchbar" >
             <input className="search" type="text" placeholder="Search..........."
             onChange={(e)=>{
                 dispatchFilter({
@@ -24,9 +25,9 @@ function Navigation(){
             />
         </div>
         <div className="cartWish">
-            <Link to="/SignUp" className="btn"><h2>👤 </h2></Link>
-            <Link to="/Wishlist" className="btn Rel"><h2 >❤️</h2> {wish.length>0?<span className="badge">{wish.length}</span>:<span></span>}</Link>
-            <Link to="/MyCart" className="btn Rel"><h2>🛒{cart.length>0?<span className="badge">{cart.length}</span>:<span></span>}</h2></Link>
+            <Link to="/SignUp"><h2><MdAccountCircle className="icons"/></h2></Link>
+            <Link to="/Wishlist" className="Rel"><h2 ><MdFavorite className="icons"/></h2> {wish.length>0?<span className="badge">{wish.length}</span>:<span></span>}</Link>
+            <Link to="/MyCart" className="Rel"><h2><ImCart className="icons"/>{cart.length>0?<span className="badge">{cart.length}</span>:<span></span>}</h2></Link>
         
         </div>
     </div>

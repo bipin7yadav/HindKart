@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     border:2px solid black;
-    height:50vh;
+    height:60vh;
     margin:1rem ;
     text-align: center;
     width: 25rem;
@@ -16,12 +16,15 @@
     align-items: center;
    
 }
+.signup-input{
+    width: 100%;
+    padding: 7px;
+}
 .textbox{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    width: 20rem;
-    margin-left: 3rem;
+    width: 100%;
+    /* margin-left: 3rem; */
 }
 
 .textbox2{
@@ -43,15 +46,18 @@
 #submit{
     width: 10rem;
     padding: .5rem 0;
-    margin-left: 7.2rem;
+    /* margin-left: 7.2rem; */
 }
 .login{
-    margin-left: 10.7rem;
+    /* margin-left: 10.7rem; */
     padding: .5rem;
 }
 .login-input{
     height: 2rem;
+    width: 100%;
+    background-color: aqua;
 }
 .btn-login{
     padding: .3rem;
+    width: 100%;
 }

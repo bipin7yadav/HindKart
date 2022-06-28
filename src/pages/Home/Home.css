@@ -13,6 +13,7 @@
 
 .container{
     width: 100%;
+    height: max-content;
     padding:0rem .4rem 0rem .7rem;
     background-color:var(--white);
 }
@@ -22,9 +23,9 @@ Link{
 }
 
 .category{
-    margin: 0.3rem;
     color:navy;
     padding: .3rem;
+    height: 20rem;
 }
 #header{
     display: flex;
@@ -52,6 +53,7 @@ Link{
 
 .con1{
     display: flex;
+    justify-content: space-between;
     width: 100%;
     height: 10rem;
     padding: .3rem;
@@ -67,7 +69,7 @@ Link{
 
 .img{
     width: 100%;
-    height: 10rem;
+    height: 100%;
 }
 
 
@@ -76,13 +78,18 @@ Link{
     position: relative;
     z-index: 0;
     width: 100%;
-    height: 25rem;
+    height: 38rem;
     margin:.4rem 0 .9rem 0;
 }
 
-.adv{
-    width: 30%;
+.con2-sub{
     position: absolute;
+    top: 40%;
+    right: 20rem;
+}
+
+.adv{
+    width: 70%;
     color: var(--black);
     font-style: italic;
     z-index: 1;
@@ -92,7 +99,8 @@ Link{
 
 .shop{
     position: absolute;
-    background-color:var(--black);
+    /* background-color:var(--black); */
+    font-size: 4rem;
     color: var(--white);
     padding: 1rem;
     border-radius: 1rem;
