@@ -13,19 +13,19 @@ function Login() {
 
                     <div className="textbox">
                         <label for="name">Email Address*</label><br />
-                        <input type="text" className="login-input" placeholder="bipinyadav9769@gmail.com" /><br />
+                        <input type="text" className="signup-input" placeholder="bipinyadav9769@gmail.com" /><br />
                     </div>
 
                     <div className="textbox">
                         <label for="name">Password*</label><br />
-                        <input type="password" className="login-input" placeholder="*************" /><br />
+                        <input type="password" className="signup-input" placeholder="*************" /><br />
                         
                     </div>
 
 
                     <div  className="textbox2">
-                        <input type="checkbox" class="center-text"></input>
-                        <div class="center-text">Remember Me</div>
+                        <input type="checkbox" ></input>
+                        <div >Remember Me</div>
                     </div>
 
                     

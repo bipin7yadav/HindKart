@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 import { useProductListContext } from "../../contexts/ProductContext"
 import "./cart.css"
@@ -6,44 +7,39 @@ import "./cart.css"
 
 function MyCart() {
 
-    const { cartState: { cart },dispatchWish ,dispatchCart,wishState:{wish}} = useProductListContext()
+    const { cartState: { cart }, dispatchWish, dispatchCart, wishState: { wish } } = useProductListContext()
     let totalPrice = 0;
 
-    // const [item,setItem]=useState(cart)
-
-    // const deleteItem= (id)=>{
-    //     const updateItems =item.filter((a,index)=>index !==id)
-
-    //     setItem(updateItems)
-    // }
 
 
     for (let i in cart) {
-        // console.log(item,"fgvhbjn")
-        totalPrice += cart[i].price*cart[i].quantity
+        totalPrice += cart[i].price * cart[i].quantity
     }
-    
-    
-    const [count,setCount]=useState(1)
-    const quantity=(product)=>{
-        // const [count,setCount]=useState(1)
-        return(
+
+
+    const [count, setCount] = useState(1)
+    const quantity = (product) => {
+        return (
             <>
-            <button className="counter" onClick={()=>{(setCount(count+1) ,(product.quantity=count+1 ))}}>+</button>
-            <span>{count}</span> 
-            <button className="counter" onClick={()=>{(setCount(count-1) ,(product.quantity=count-1 ))}}>-</button>
+                <button className="counter" onClick={() => { (setCount(count + 1), (product.quantity = count + 1)) }}>+</button>
+                <span>{count}</span>
+                <button className="counter" onClick={() => {
+                    if(count>1){
+                        (setCount(count - 1), (product.quantity = count - 1)) }}
+                    }
+                     >-</button>
             </>
         )
     }
-    
+
 
 
     return <>
 
-        <div className="cart">
+        {cart.length > 0 ? <div className="cart">
             <div className="mapCart">
                 {
-                    cart.map((product,index) => {
+                    cart.map((product, index) => {
                         const { _id, title, price, brand, image, fastDelivery, rating } = product;
                         return (
 
@@ -63,20 +59,30 @@ function MyCart() {
                                     </div>
                                     <div className="btn-container">
                                         <button className="btn"
-                                            onClick={() => dispatchCart({type:"REMOVE_FROM_CART",payload:product})}
+                                            onClick={
+                                                () => {
+                                                    toast.success("removed from cart")
+                                                    dispatchCart({ type: "REMOVE_FROM_CART", payload: product })
+                                                }
+                                            }
                                         >Remove From Cart</button>
 
                                         <button className="btn"
                                             onClick={() => {
-                                                const checkWish=wish.some(item=>item._id ===product._id)
-                                                if(!checkWish){
+                                                const checkWish = wish.some(item => item._id === product._id)
+                                                if (!checkWish) {
+                                                    toast.info("moved to wish list")
                                                     dispatchWish({
                                                         type: "ADD_TO_WISHLIST",
                                                         payload: product
                                                     })
-                                                    {deleteItem(index)}
+
+                                                    dispatchCart({ type: "REMOVE_FROM_CART", payload: product })
+                                                    // {deleteItem(index)}
+                                                } else {
+                                                    toast.info("already in wishlist")
                                                 }
-                                             
+
                                             }}
                                         >Move To Wishlist</button>
                                     </div>
@@ -97,6 +103,10 @@ function MyCart() {
                 </div>
             </div>
         </div>
+            :
+            <div>
+                <h1 className="center-text">Your Cart is empty </h1>
+            </div>}
 
 
     </>
