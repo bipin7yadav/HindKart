@@ -25,7 +25,7 @@ function Navigation(){
             />
         </div>
         <div className="cartWish">
-            <Link to="/SignUp"><h2><MdAccountCircle className="icons"/></h2></Link>
+            <Link to="/Login"><h2><MdAccountCircle className="icons"/></h2></Link>
             <Link to="/Wishlist" className="Rel"><h2 ><MdFavorite className="icons"/></h2> {wish.length>0?<span className="badge">{wish.length}</span>:<span></span>}</Link>
             <Link to="/MyCart" className="Rel"><h2><ImCart className="icons"/>{cart.length>0?<span className="badge">{cart.length}</span>:<span></span>}</h2></Link>
         

@@ -1,3 +1,4 @@
+@import "../../index.css";
 .info{
     display: flex;
     flex-direction: column;
@@ -60,4 +61,132 @@
 .btn-login{
     padding: .3rem;
     width: 100%;
+}
+
+
+.signup-section {
+  margin-top: 6rem;
+}
+
+.signup-container {
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card.signup-card-container {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border:1px solid var(--gray-300)
+}
+
+.signup-error-message {
+  font-size: 12px;
+  background-color: var(--light-red);
+  padding: 6px;
+  margin-bottom: 0.8rem;
+}
+
+.card.signup-card-container .card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+.card.signup-card-container .card-body {
+  width: 100%;
+}
+
+.card.signup-card-container .card-body .input-group {
+  width: auto;
+  margin: 0 0 10px;
+}
+
+.card.signup-card-container .card-extra-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  margin: 1rem 0;
+}
+
+.card.signup-card-container .card-extra-content .checkbox-label {
+  margin: 0;
+}
+
+.card.signup-card-container .card-extra-content .checkbox {
+  margin-left: 0;
+}
+
+.card.signup-card-container .card-extra-content .forgot-password {
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.card.signup-card-container .card-extra-content .forgot-password:hover {
+  opacity: 0.8;
+}
+
+.card.signup-card-container .signup-btn {
+  width: 100%;
+}
+
+.card.signup-card-container .create-new-account-link {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.card.signup-card-container .create-new-account-link a {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--gray-600);
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.card.signup-card-container .create-new-account-link a:hover {
+  color: var(--secondary-color);
+}
+
+@media only screen and (min-width: 450px) {
+  .signup-container {
+    padding: 0 2rem;
+  }
+  .signup-section {
+    margin-top: 1rem;
+  }
+  .card.signup-card-container {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /*  */
+}
+
+@media only screen and (min-width: 1024px) {
+  .signup-container {
+    padding: 0 4rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .signup-container {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  .signup-section {
+    margin-top: 1rem;
+  }
 }

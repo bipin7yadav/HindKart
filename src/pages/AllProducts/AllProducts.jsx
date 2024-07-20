@@ -258,8 +258,8 @@ function AllProducts() {
                                             <div className="btn-container">
                                                 {
                                                     cart.some(i => i._id === _id) ? (
-                                                        <button className="btn">Added To The Cart</button>
-                                                    ) : (<button className="btn"
+                                                        <button className="btn1">Added To The Cart</button>
+                                                    ) : (<button className="btn1"
                                                         onClick={() => {
                                                             toast.success("added to cart")
                                                             dispatchCart({
@@ -273,9 +273,9 @@ function AllProducts() {
 
                                                 {
                                                     wish.some(i => i._id === _id) ? (
-                                                        <Link to="/Wishlist"><button className="btn">Visit Wishlist</button></Link>
+                                                        <Link to="/Wishlist"><button className="btn1">Visit Wishlist</button></Link>
                                                     ) : (
-                                                        <button className="btn"
+                                                        <button className="btn1"
                                                             onClick={() => {
                                                                 toast.success("added to wish list")
                                                                 dispatchWish({

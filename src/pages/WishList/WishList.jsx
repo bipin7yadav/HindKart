@@ -45,7 +45,7 @@ function Wishlist() {
                                 {fastDelivery ? <h6>FastDelivery</h6> : <h6>Minimum 3-4 Days</h6>}
                             </div>
                             <div className="btn-container">
-                                <button className="btn"
+                                <button className="btn1"
                                     onClick={() => {
                                         // deleteWishItem(index)
                                         const checkCart = cart.some(item => item._id === product._id)

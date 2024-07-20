@@ -7,11 +7,30 @@ import {AllProducts,Login,SignUp,Home,MyCart,SingleProduct,Wishlist} from "./pag
 import {Footer,Navigation} from "./components/index"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Toaster } from "react-hot-toast";
+
+const ToasterWrapper = () => {
+  return (
+    <Toaster
+      position="bottom-left"
+      reverseOrder={false}
+      toastOptions={{
+        style: {
+          minWidth: "260px",
+        },
+        success: {
+          duration: 2000,
+        },
+      }}
+    />
+  );
+};
 
 function App() {
   return (
     <div className="App">
       <ToastContainer />
+      <ToasterWrapper/>
       <Navigation/>
       <Routes>
         <Route path="/" element={<Home/>} />

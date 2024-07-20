@@ -58,7 +58,7 @@ function MyCart() {
                                         {fastDelivery ? <h6>FastDelivery</h6> : <h6>Minimum 3-4 Days</h6>}
                                     </div>
                                     <div className="btn-container">
-                                        <button className="btn"
+                                        <button className="btn1"
                                             onClick={
                                                 () => {
                                                     toast.success("removed from cart")
@@ -67,7 +67,7 @@ function MyCart() {
                                             }
                                         >Remove From Cart</button>
 
-                                        <button className="btn"
+                                        <button className="btn1"
                                             onClick={() => {
                                                 const checkWish = wish.some(item => item._id === product._id)
                                                 if (!checkWish) {

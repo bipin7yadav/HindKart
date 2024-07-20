@@ -12,6 +12,7 @@ const sign = require("jwt-encode");
  * send POST Request at /api/auth/signup
  * body contains {firstName, lastName, email, password}
  * */
+const REACT_APP_JWT_SECRET ="bipinyadavkartmy-super-ultra-secret-json-web-token-string"
 
 export const signupHandler = function (schema, request) {
   const { email, password, ...rest } = JSON.parse(request.requestBody);
@@ -39,7 +40,7 @@ export const signupHandler = function (schema, request) {
       wishlist: [],
     };
     const createdUser = schema.users.create(newUser);
-    const encodedToken = sign({ _id, email }, process.env.REACT_APP_JWT_SECRET);
+    const encodedToken = sign({ _id, email }, REACT_APP_JWT_SECRET);
     return new Response(201, {}, { createdUser, encodedToken });
   } catch (error) {
     return new Response(
@@ -60,8 +61,12 @@ export const signupHandler = function (schema, request) {
 
 export const loginHandler = function (schema, request) {
   const { email, password } = JSON.parse(request.requestBody);
+  console.log('====================================');
+  console.log(email,password);
+  console.log('====================================');
   try {
     const foundUser = schema.users.findBy({ email });
+    console.log(foundUser);
     if (!foundUser) {
       return new Response(
         404,
@@ -70,10 +75,12 @@ export const loginHandler = function (schema, request) {
       );
     }
     if (password === foundUser.password) {
+      console.log("encoding", REACT_APP_JWT_SECRET);
       const encodedToken = sign(
         { _id: foundUser._id, email },
-        process.env.REACT_APP_JWT_SECRET
+        REACT_APP_JWT_SECRET
       );
+      console.log("enco",encodedToken);
       foundUser.password = undefined;
       return new Response(200, {}, { foundUser, encodedToken });
     }
@@ -91,7 +98,9 @@ export const loginHandler = function (schema, request) {
       500,
       {},
       {
-        error,
+        error: [
+          "Failed.",
+        ],
       }
     );
   }
