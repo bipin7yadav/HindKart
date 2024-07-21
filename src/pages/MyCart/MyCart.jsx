@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 
 import { useProductListContext } from "../../contexts/ProductContext"
 import "./cart.css"
@@ -9,6 +10,10 @@ import "./cart.css"
 function MyCart() {
 
     const { cartState: { cart }, dispatchWish, dispatchCart, wishState: { wish } } = useProductListContext()
+    const {
+        state: { userInfo, token, isLoggedIn },
+        logoutHandler,
+      } = useAuth();
     let totalPrice = 0;
 
 
@@ -32,6 +37,57 @@ function MyCart() {
             </>
         )
     }
+
+
+    const loadScript = async src => {
+        return new Promise(resolve => {
+          const script = document.createElement("script");
+          script.src = src;
+          script.onload = () => {
+            resolve(true);
+          };
+          script.onerror = () => {
+            resolve(false);
+          };
+          document.body.appendChild(script);
+        });
+      };
+    const proceedToPay = () => {
+        razorpayCheckout();
+      };
+    
+      const razorpayCheckout = async () => {
+        const res = await loadScript(
+          "https://checkout.razorpay.com/v1/checkout.js"
+        );
+    
+        if (!res) {
+          alert("Razorpay SDK failed to load. Are you online?");
+          return;
+        }
+    
+        const options = {
+          key: "rzp_test_EU0kcQFKEdII0m",
+          currency: "INR",
+          amount: totalPrice * 100,
+          name: "nextstore",
+          description: "Thank you for shopping with us",
+          theme: { color: "#2563eb" },
+          handler: function (response) {
+            const paymentId = response.razorpay_payment_id;
+            const orderId = uuid();
+            clearCartService(token, dispatch);
+            navigate("/order-summary", { state: { orderId } });
+          },
+          prefill: {
+            name: userInfo.firstName,
+            email: "bipinyadav@example.com",
+            contact: "1111162884",
+          },
+        };
+        const paymentObject = new window.Razorpay(options);
+        paymentObject.open();
+      };
 
 
 
@@ -100,7 +156,9 @@ function MyCart() {
                     <div><h1>SubTotal ({cart.length}) Items</h1>
                         <h1>Total :  ₹{totalPrice}</h1>
                     </div>
-                    <div><button className="checkout-btn">Proceed To Checkout</button></div>
+                    <div><button className="checkout-btn"
+                    onClick={ proceedToPay}
+                    >Proceed To Checkout</button></div>
                 </div>
             </div>
         </div>
