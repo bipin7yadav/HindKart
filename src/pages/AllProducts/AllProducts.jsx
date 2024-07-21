@@ -241,61 +241,97 @@ function AllProducts() {
                             transProducts().map((product, index) => {
                                 const { _id, title, price, brand, image, inStock, fastDelivery, rating } = product;
                                 return (
-
-                                    <div className="card" key={_id}>
-                                        <div className="pro-img">
-                                            <img src={image} className="imag"></img>
-                                        </div>
-                                        <div className="details">
-                                            <div>
-                                                <h5>{title}</h5>
-                                                <div>{brand}</div>
-                                                <div>Rating : {rating}⭐</div>
-                                                <h6>Price :₹ {price}</h6>
-                                                {inStock ? <h6>Instock</h6> : <h6>Outoff Stock</h6>}
-                                                {fastDelivery ? <h6>FastDelivery</h6> : <h6>Minimum 3-4 Days</h6>}
-                                            </div>
-                                            <div className="btn-container">
-                                                {
-                                                    cart.some(i => i._id === _id) ? (
-                                                        <button className="btn1">Added To The Cart</button>
-                                                    ) : (<button className="btn1"
-                                                        onClick={() => {
-                                                            toast.success("added to cart")
-                                                            dispatchCart({
-                                                                type: "ADD_TO_CART",
-                                                                payload: product
-                                                            })
-                                                        }}
-                                                        disabled={!inStock}
-                                                    >Add To Cart</button>)
-                                                }
-
-                                                {
-                                                    wish.some(i => i._id === _id) ? (
-                                                        <Link to="/Wishlist"><button className="btn1">Visit Wishlist</button></Link>
-                                                    ) : (
-                                                        <button className="btn1"
-                                                            onClick={() => {
-                                                                toast.success("added to wish list")
-                                                                dispatchWish({
-                                                                    type: "ADD_TO_WISHLIST",
-                                                                    payload: product
-                                                                })
-
-
-                                                            }}
-                                                        >Add To Wishlist</button>
-                                                    )
-                                                }
-
-
-                                            </div>
-                                        </div>
-
+                                  <div className="card" key={_id}>
+                                    <div className="pro-img">
+                                      <img src={image} className="imag"></img>
                                     </div>
+                                    <button
+                                      className="card-floating-icon"
+                                      onClick={() => {
+                                        toast.success(
+                                                "added to wish list"
+                                              );
+                                              dispatchWish({
+                                                type: "ADD_TO_WISHLIST",
+                                                payload: product,
+                                              });
+                                            }}
+                                            disabled={wish.some((i) => i._id == _id)}
+                                    >
+                                      {wish.some((i) => i._id === _id)  ? (
+                                        <span className="material-icons-outlined icon-active">
+                                          favorite
+                                        </span>
+                                      ) : (
+                                        <span className="material-icons-outlined">
+                                          favorite_border
+                                        </span>
+                                      )}
+                                    </button>
+                                    <div className="details">
+                                      <div>
+                                        <h5>{title}</h5>
+                                        <div>{brand}</div>
+                                        <div>Rating : {rating}⭐</div>
+                                        <h6>Price :₹ {price}</h6>
+                                        {inStock ? (
+                                          <h6>Instock</h6>
+                                        ) : (
+                                          <h6>Outoff Stock</h6>
+                                        )}
+                                        {fastDelivery ? (
+                                          <h6>FastDelivery</h6>
+                                        ) : (
+                                          <h6>Minimum 3-4 Days</h6>
+                                        )}
+                                      </div>
+                                      <div className="btn-container">
+                                        {cart.some((i) => i._id === _id) ? (
+                                          <button className="btn1">
+                                            Added To The Cart
+                                          </button>
+                                        ) : (
+                                          <button
+                                            className="btn1"
+                                            onClick={() => {
+                                              toast.success("added to cart");
+                                              dispatchCart({
+                                                type: "ADD_TO_CART",
+                                                payload: product,
+                                              });
+                                            }}
+                                            disabled={!inStock}
+                                          >
+                                            Add To Cart
+                                          </button>
+                                        )}
 
-                                )
+                                        {/* {wish.some((i) => i._id === _id) ? (
+                                          <Link to="/Wishlist">
+                                            <button className="btn1">
+                                              Visit Wishlist
+                                            </button>
+                                          </Link>
+                                        ) : (
+                                          <button
+                                            className="btn1"
+                                            onClick={() => {
+                                              toast.success(
+                                                "added to wish list"
+                                              );
+                                              dispatchWish({
+                                                type: "ADD_TO_WISHLIST",
+                                                payload: product,
+                                              });
+                                            }}
+                                          >
+                                            Add To Wishlist
+                                          </button>
+                                        )} */}
+                                      </div>
+                                    </div>
+                                  </div>
+                                );
                             })
                         }
                     </div>

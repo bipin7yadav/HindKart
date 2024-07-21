@@ -9,6 +9,29 @@
   --blue:blue;
   --grey:grey;
   --aqua:aqua;
+  --primary-color: #2793f8;
+  --brand-color: #1a73e8;
+  --secondary-color: #2b4669;
+  --grey: #9a9a9a;
+  --lynx-gray: #c5c5c5;
+  --light-grey: #e9e9e9;
+  --black: #282828;
+  --white: #ffffff;
+  --light-blue: #b4d9fb;
+  --dark-red: #62020a;
+  --dark-green: #012e03;
+  --dark-orange: #754701;
+  --blue: #42a1fa;
+  --red: #ef4444;
+  --green: #0ca814;
+  --orange: #f97316;
+  --rating-orange: #ffb400;
+  --toast-default-color: rgb(51, 51, 51);
+  --dark: #303030;
+  --light-red: #fcd0d4;
+  --light-green: #cffad0;
+  --light-orange: #fddfb1;
+  --secondary: #f3f4f6;
 }
 ul ol {
   list-style: none;

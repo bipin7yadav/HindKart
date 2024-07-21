@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 import { useProductListContext } from "../../contexts/ProductContext"
 import "./cart.css"
@@ -104,9 +105,14 @@ function MyCart() {
             </div>
         </div>
             :
-            <div>
-                <h1 className="center-text">Your Cart is empty </h1>
-            </div>}
+            <div className="cart-message-container">
+                <h3>Hey, it feels so light!</h3>
+                <p>There is nothing in your bag. Let's add some items.</p>
+                <Link className="btn btn-primary-outline" to="/AllProducts">
+                  Add Items To Cart
+                </Link>
+              </div>
+            }
 
 
     </>

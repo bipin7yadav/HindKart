@@ -7,3 +7,23 @@
 .center-text{
     margin-left: 40%;
 }
+
+.wishlist-message-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 60vh;
+    width: 100vw;
+    padding: 2rem;
+    text-align: center;
+    color: var(--gray-600);
+  }
+  
+  .wishlist-message-container p {
+    margin-top: 0.6rem;
+  }
+  
+  .wishlist-message-container .btn {
+    margin-top: 3rem;
+  }

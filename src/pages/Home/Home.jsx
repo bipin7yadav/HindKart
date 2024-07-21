@@ -12,7 +12,7 @@ function Home() {
 
     return (
         <>
-            <div class="container">
+            <div class="container1">
 
                 <div className="con2">
                     <img className="img2" src="https://images.pexels.com/photos/5632396/pexels-photo-5632396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />

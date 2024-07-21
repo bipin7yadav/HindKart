@@ -113,9 +113,6 @@ const AuthProvider = ({ children }) => {
         status,
       } = await loginService(email, password);
 
-      console.log('====================================');
-      console.log(encodedToken,foundUser,status);
-      console.log('====================================');
       if (status === 200) {
         toast.success(`Hello, ${foundUser.firstName}. Welcome back!`, {
           id: toastId,

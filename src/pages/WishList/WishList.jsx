@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { toast } from "react-toastify"
 import { useProductListContext } from "../../contexts/ProductContext"
+import { Link } from "react-router-dom"
 import "./wishlist.css"
 
 function Wishlist() {
@@ -68,7 +69,17 @@ function Wishlist() {
                     </div>
 
                 )
-            }) : <h1 className="center-text90">Add Items To Your Wish List</h1>
+            }) : 
+            <div className="wishlist-message-container">
+                <h3>Wishlist Empty.</h3>
+                <p>
+                  Add items that you would like to save for later to your
+                  wishlist
+                </p>
+                <Link className="btn btn-primary-outline" to="/AllProducts">
+                  Add Items To Wishlist
+                </Link>
+              </div>
         }
         </div>
     </>)

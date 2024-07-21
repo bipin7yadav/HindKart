@@ -48,6 +48,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
+import { Profile } from "../Profile/Profile";
 import "./Signup.css";
 
 const SignUp = () => {
@@ -59,7 +60,7 @@ const SignUp = () => {
   });
 
   const {
-    state: { error },
+    state: { error, token, isLoggedIn },
     signupHandler,
   } = useAuth();
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -80,8 +81,9 @@ const SignUp = () => {
 
   return (
     <main class="main-wrapper">
+        {token && isLoggedIn?<Profile/>:
       <section class="signup-section signup-container">
-        <div class="card signup-card-container">
+          <div class="card signup-card-container">
           <div class="card-title">Signup</div>
           {errorMsg !== "" ? (
             <div className="signup-error-message">{errorMsg}</div>
@@ -185,6 +187,7 @@ const SignUp = () => {
           </div>
         </div>
       </section>
+        }
     </main>
   );
 };

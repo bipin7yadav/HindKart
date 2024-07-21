@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route,useLocation } from 'react-router-dom';
 
 import {AllProducts,Login,SignUp,Home,MyCart,SingleProduct,Wishlist} from "./pages/index"
 
@@ -27,6 +27,7 @@ const ToasterWrapper = () => {
 };
 
 function App() {
+  const { pathname } = useLocation();
   return (
     <div className="App">
       <ToastContainer />
@@ -41,7 +42,7 @@ function App() {
         <Route path="/SingleProduct" element={<SingleProduct/>} />
         <Route path="/Wishlist" element={<Wishlist/>} />
       </Routes>
-        <Footer/>
+       {pathname=="/" && <Footer/>}
       
     </div>
   );

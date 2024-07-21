@@ -1,5 +1,5 @@
 import "./Navigation.css";
-import {Link} from "react-router-dom";
+import {Link,useLocation,useNavigate} from "react-router-dom";
 import {useProductListContext} from "../../contexts/ProductContext"
 import { MdAccountCircle , MdFavorite } from "react-icons/md";
 import { ImCart } from "react-icons/im";
@@ -8,13 +8,15 @@ import { ImCart } from "react-icons/im";
 function Navigation(){
 
     const {dispatchFilter,cartState:{cart},wishState:{wish}}=useProductListContext()
+    const { pathname } = useLocation();
+    const navigate = useNavigate();
     return<>
 
     <div className="header">
         <div className="">
             <Link to="/"><h3 className="WebName"> 🅷🅸🅽🅳🅺🅰🆁🆃 </h3></Link>
         </div>
-        <div className="searchbar" >
+        {pathname === "/AllProducts" && <div className="searchbar" >
             <input className="search" type="text" placeholder="Search..........."
             onChange={(e)=>{
                 dispatchFilter({
@@ -23,7 +25,7 @@ function Navigation(){
                 })
             }}
             />
-        </div>
+        </div>}
         <div className="cartWish">
             <Link to="/Login"><h2><MdAccountCircle className="icons"/></h2></Link>
             <Link to="/Wishlist" className="Rel"><h2 ><MdFavorite className="icons"/></h2> {wish.length>0?<span className="badge">{wish.length}</span>:<span></span>}</Link>

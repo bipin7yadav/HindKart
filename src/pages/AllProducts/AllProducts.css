@@ -41,20 +41,82 @@
     grid-template-columns: 16rem 1fr;
     width: 35%;
     box-shadow: gainsboro 5px 4px;
+    position: relative;
+}
+
+.pro-img{
+    height: 100%;
+    object-fit: contain;
 }
 .imag{
     height: 91.5%;
     width: 16rem;
+    object-fit: contain;
+    cursor: pointer;
+    transition: .3s ease-out;
+    display: block;
+    
+}
+.imag:hover{
+    overflow: hidden;
+    transform: scale(1.08);
 }
 .details{
     padding:0 1rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 90%;
+}
+.card-floating-icon{
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.card-floating-icon span {
+    color: var(--grey);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card-floating-icon span:hover{
+    color: var(--red);
+}
+.card-floating-icon span.icon-active {
+    color: var(--red);
+  }
+
+  .material-icons-outlined {
+    font-family: 'Material Icons Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+.material-icons-outlined span.icon-active{
+    color: var(--red);
 }
 
 .btn1{
     width: 100%;
     cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--gray-100);
+    color: var(--gray-600);
+    font-weight: 400;
+    text-align: center;
+    padding: 5px;
 }
 
 .clearRange{
