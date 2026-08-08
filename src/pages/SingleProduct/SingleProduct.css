@@ -1,0 +1,395 @@
+.pdp-page {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+  background-color: #ffffff;
+}
+
+.pdp-breadcrumb {
+  font-size: 13px;
+  color: #535766;
+  padding: 20px 0;
+}
+
+.pdp-breadcrumb a {
+  color: #282c3f;
+  text-decoration: none;
+}
+
+.pdp-breadcrumb a:hover {
+  color: #ff3f6c;
+}
+
+.pdp-container {
+  display: grid;
+  grid-template-columns: 480px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Gallery */
+.pdp-gallery {
+  position: sticky;
+  top: 100px;
+}
+
+.main-image-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  background-color: #f5f5f6;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #eaeaec;
+}
+
+.pdp-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pdp-wishlist-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #eaeaec;
+  border-radius: 20px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 12px;
+  color: #282c3f;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.pdp-wishlist-badge:hover {
+  border-color: #ff3f6c;
+  color: #ff3f6c;
+}
+
+/* Details */
+.pdp-details {
+  padding-top: 10px;
+}
+
+.pdp-brand {
+  font-size: 24px;
+  font-weight: 800;
+  color: #282c3f;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.pdp-title {
+  font-size: 18px;
+  font-weight: 400;
+  color: #535766;
+  margin-bottom: 16px;
+}
+
+.pdp-rating-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #eaeaec;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #282c3f;
+  cursor: pointer;
+}
+
+.pdp-rating-pill .star {
+  color: #149777;
+  font-size: 16px;
+}
+
+.pdp-rating-pill .divider {
+  color: #d4d5d9;
+}
+
+.pdp-rating-pill .rating-count {
+  color: #535766;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.pdp-divider {
+  height: 1px;
+  background-color: #eaeaec;
+  margin: 24px 0;
+}
+
+/* Pricing */
+.pdp-price-box {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.pdp-current-price {
+  font-size: 24px;
+  font-weight: 800;
+  color: #282c3f;
+}
+
+.pdp-mrp {
+  font-size: 18px;
+  color: #94969f;
+  text-decoration: line-through;
+}
+
+.pdp-discount {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff905a;
+}
+
+.pdp-tax-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #03a685;
+}
+
+/* Size Selection */
+.pdp-size-section {
+  margin-top: 24px;
+}
+
+.size-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.size-header h4 {
+  font-size: 14px;
+  font-weight: 800;
+  color: #282c3f;
+  letter-spacing: 0.5px;
+}
+
+.size-chart-link {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ff3f6c;
+  cursor: pointer;
+}
+
+.size-buttons {
+  display: flex;
+  gap: 14px;
+}
+
+.size-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #d4d5d9;
+  background-color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  color: #282c3f;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.size-btn:hover {
+  border-color: #ff3f6c;
+  color: #ff3f6c;
+}
+
+.size-btn.selected {
+  border-color: #ff3f6c;
+  color: #ff3f6c;
+  background-color: #fff0f4;
+}
+
+/* Actions */
+.pdp-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.pdp-btn {
+  height: 52px;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-add-bag {
+  flex: 3;
+  background-color: #ff3f6c;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-add-bag:hover {
+  background-color: #e6355d;
+}
+
+.btn-go-to-bag {
+  flex: 3;
+  background-color: #282c3f;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-wishlist {
+  flex: 2;
+  background-color: #ffffff;
+  color: #282c3f;
+  border: 1px solid #d4d5d9;
+}
+
+.btn-wishlist:hover {
+  border-color: #282c3f;
+}
+
+.btn-wishlist.active {
+  border-color: #ff3f6c;
+  color: #ff3f6c;
+  background-color: #fff0f4;
+}
+
+/* Delivery */
+.pdp-delivery-section h4 {
+  font-size: 14px;
+  font-weight: 800;
+  color: #282c3f;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.pincode-form {
+  display: flex;
+  gap: 10px;
+  max-width: 320px;
+  margin-bottom: 16px;
+}
+
+.pincode-input {
+  flex: 1;
+  border: 1px solid #d4d5d9;
+  border-radius: 4px;
+  padding: 10px 14px;
+  font-size: 14px;
+  outline: none;
+}
+
+.pincode-input:focus {
+  border-color: #ff3f6c;
+}
+
+.pincode-check-btn {
+  background: none;
+  border: none;
+  color: #ff3f6c;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.pincode-success {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #03a685;
+  margin-bottom: 16px;
+}
+
+.delivery-features {
+  list-style: none;
+  padding: 0;
+}
+
+.delivery-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #282c3f;
+  margin-bottom: 10px;
+}
+
+.feat-icon {
+  font-size: 20px;
+  color: #535766;
+}
+
+/* Specifications */
+.pdp-specs-section h4 {
+  font-size: 14px;
+  font-weight: 800;
+  color: #282c3f;
+  margin-bottom: 10px;
+}
+
+.specs-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #535766;
+  margin-bottom: 20px;
+}
+
+.specs-subtitle {
+  font-size: 13px;
+  font-weight: 800;
+  color: #282c3f;
+  margin-bottom: 12px;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #f5f5f6;
+  padding-bottom: 8px;
+}
+
+.spec-name {
+  font-size: 12px;
+  color: #94969f;
+}
+
+.spec-val {
+  font-size: 14px;
+  font-weight: 600;
+  color: #282c3f;
+}
+
+@media (max-width: 900px) {
+  .pdp-container {
+    grid-template-columns: 1fr;
+  }
+  .pdp-gallery {
+    position: static;
+  }
+}

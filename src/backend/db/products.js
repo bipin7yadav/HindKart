@@ -1,304 +1,478 @@
 import { v4 as uuid } from "uuid";
 
 /**
- * Product Database can be added here.
- * You can add products of your wish with different attributes
- * */
+ * HindKart Product Database - Expanded Catalog (100+ items)
+ */
 
 export const products = [
-  
+  // --- ORIGINAL 21 PRODUCTS (MEN & FOOTWEAR) ---
   {
     _id: uuid(),
-    title:"HRX Dry Fit Shorts Men",
+    title: "HRX Dry Fit Shorts Men",
     brand: "HRX by Hrithik Roshan",
-    categoryName:"Shorts",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11641064/2020/9/9/ac522d33-1325-4e3e-ab68-1de4768a61b11599633085687-HRX-by-Hrithik-Roshan-Men-Medieval-Blue-Solid-Regular-Fit-Ra-1.jpg",
+    categoryName: "Shorts",
+    gender: "Men",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11641064/2020/9/9/ac522d33-1325-4e3e-ab68-1de4768a61b11599633085687-HRX-by-Hrithik-Roshan-Men-Medieval-Blue-Solid-Regular-Fit-Ra-1.jpg",
     price: 479,
+    originalPrice: 1099,
     discount: "56",
-    rating: 2.1,
+    rating: 4.3,
     inStock: true,
     fastDelivery: false,
-    quantity:1
+    quantity: 1,
+    sizes: ["S", "M", "L", "XL", "XXL"],
   },
   {
     _id: uuid(),
-    title:"HRX Dry Fit Shots Men",
+    title: "HRX Dry Fit Shots Men",
     brand: "HRX by Hrithik Roshan",
-    categoryName:'Shorts',
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15308910/2021/12/29/d79a2f0d-9399-422b-8b30-f54e04a803f81640773545372-HRX-by-Hrithik-Roshan-Men-Shorts-4031640773544698-1.jpg",
+    categoryName: "Shorts",
+    gender: "Men",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15308910/2021/12/29/d79a2f0d-9399-422b-8b30-f54e04a803f81640773545372-HRX-by-Hrithik-Roshan-Men-Shorts-4031640773544698-1.jpg",
     price: 569,
+    originalPrice: 1299,
     discount: "56",
-    rating: 2.5,
-    inStock: false,
+    rating: 3.5,
+    inStock: true,
     fastDelivery: true,
-    quantity:1
+    quantity: 1,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     _id: uuid(),
-    title:"Men Regular Fit Shorts",
+    title: "Men Regular Fit Shorts",
     brand: "Artengo By Decathlon",
-    categoryName:"Shorts",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/11/17/00a92a9e-ae1f-4fdd-9d90-00b47e21430e1605624331855-1.jpg",
+    categoryName: "Shorts",
+    gender: "Men",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/11/17/00a92a9e-ae1f-4fdd-9d90-00b47e21430e1605624331855-1.jpg",
     price: 379,
+    originalPrice: 699,
     discount: "20",
     rating: 4.2,
     inStock: true,
     fastDelivery: true,
-    quantity:1
+    quantity: 1,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     _id: uuid(),
-    title:"Men Solid Running Shorts",
+    title: "Men Solid Running Shorts",
     brand: "H&M",
-    categoryName:"Shorts",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14926966/2021/7/26/d0af5676-875d-4e10-8980-64bedc79ac591627271924271Runningshorts1.jpg",
+    categoryName: "Shorts",
+    gender: "Men",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14926966/2021/7/26/d0af5676-875d-4e10-8980-64bedc79ac591627271924271Runningshorts1.jpg",
     price: 1479,
-    discount: "156",
-    rating: 5,
-    inStock: false,
+    originalPrice: 2499,
+    discount: "40",
+    rating: 4.5,
+    inStock: true,
     fastDelivery: true,
-    quantity:1
+    quantity: 1,
+    sizes: ["S", "M", "L"],
   },
   {
     _id: uuid(),
-    title:"Men Jamming 2.0 Running Shoe",
+    title: "Men Jamming 2.0 Running Shoe",
     brand: "Puma",
-    categoryName:"Shoes",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14824822/2021/8/23/4c997245-e8d5-4e56-8a91-9096693d80131629712617426-Puma-Men-Sports-Shoes-521629712616966-1.jpg",
+    categoryName: "Shoes",
+    gender: "Shoes",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14824822/2021/8/23/4c997245-e8d5-4e56-8a91-9096693d80131629712617426-Puma-Men-Sports-Shoes-521629712616966-1.jpg",
     price: 4999,
-    discount: "556",
+    originalPrice: 8999,
+    discount: "44",
     rating: 4.3,
     inStock: true,
     fastDelivery: true,
-    quantity:1
+    quantity: 1,
+    sizes: ["UK 7", "UK 8", "UK 9", "UK 10"],
   },
   {
     _id: uuid(),
-    title:"Men Quest 3 Running Shoes",
+    title: "Men Quest 3 Running Shoes",
     brand: "Nike",
-    categoryName:"Shoes",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12738468/2020/12/23/1a7a4330-d5ef-4c3d-883f-0c76fe8002fc1608712520232-Nike-Quest-3-Mens-Running-Shoe-9651608712518299-1.jpg",
+    categoryName: "Shoes",
+    gender: "Shoes",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12738468/2020/12/23/1a7a4330-d5ef-4c3d-883f-0c76fe8002fc1608712520232-Nike-Quest-3-Mens-Running-Shoe-9651608712518299-1.jpg",
     price: 5095,
-    discount: "1056",
+    originalPrice: 7995,
+    discount: "36",
     rating: 4.4,
-    inStock: false,
-    fastDelivery: true,
-    quantity:1
-  },
-  {
-    _id: uuid(),
-    title:"Men TR-100 Training Shoe",
-    brand: "HRX by Hrithik Roshan",
-    categoryName:"Shoes",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11160268/2020/11/27/871932ee-ef0f-4a09-80f7-3dcce42a65071606474095931HRXbyHrithikRoshanMenGreyTR-100TrainingShoe6.jpg",
-    price: 2479,
-    discount: "356",
-    rating: 5,
     inStock: true,
     fastDelivery: true,
-    quantity:1
+    quantity: 1,
+    sizes: ["UK 7", "UK 8", "UK 9", "UK 10"],
   },
   {
     _id: uuid(),
-    title:"Men Solid Leather Berbys",
+    title: "Men TR-100 Training Shoe",
+    brand: "HRX by Hrithik Roshan",
+    categoryName: "Shoes",
+    gender: "Shoes",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11160268/2020/11/27/871932ee-ef0f-4a09-80f7-3dcce42a65071606474095931HRXbyHrithikRoshanMenGreyTR-100TrainingShoe6.jpg",
+    price: 2479,
+    originalPrice: 4299,
+    discount: "42",
+    rating: 4.5,
+    inStock: true,
+    fastDelivery: true,
+    quantity: 1,
+    sizes: ["UK 7", "UK 8", "UK 9"],
+  },
+  {
+    _id: uuid(),
+    title: "Men Solid Leather Berbys",
     brand: "Carlo Romano",
-    categoryName:"Shoes",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/1/13/eb79ef36-66df-403d-a18a-80502153f7a11610515731977-1.jpg",
+    categoryName: "Shoes",
+    gender: "Shoes",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/1/13/eb79ef36-66df-403d-a18a-80502153f7a11610515731977-1.jpg",
     price: 1739,
-    discount: "00",
-    rating: 5,
+    originalPrice: 3499,
+    discount: "50",
+    rating: 4.5,
     inStock: true,
     fastDelivery: true,
-    quantity:1
+    quantity: 1,
+    sizes: ["UK 7", "UK 8", "UK 9"],
   },
   {
     _id: uuid(),
-    title:"Running Rapid Dry Tank T-shirt",
+    title: "Running Rapid Dry Tank T-shirt",
     brand: "HRX by Hrithik Roshan",
-    categoryName:"T-shirt",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10565534/2020/2/4/ec6bbc00-7b34-4317-9b64-f779acbb756d1580805807220-HRX-by-Hrithik-Roshan-Men-Blue--Charcoal-Grey-Colourblocked--1.jpg",
+    categoryName: "T-shirt",
+    gender: "Men",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10565534/2020/2/4/ec6bbc00-7b34-4317-9b64-f779acbb756d1580805807220-HRX-by-Hrithik-Roshan-Men-Blue--Charcoal-Grey-Colourblocked--1.jpg",
     price: 489,
-    discount: "96",
+    originalPrice: 999,
+    discount: "51",
     rating: 4.5,
     inStock: true,
     fastDelivery: true,
-    quantity:1
+    quantity: 1,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     _id: uuid(),
-    title:"Printed Pure Cotton T-shirt",
+    title: "Printed Pure Cotton T-shirt",
     brand: "Moda Rapido",
-    categoryName:"T-shirt",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12702792/2021/2/17/4cc48900-e450-42dc-ae7f-733c01bb4e2e1613562686869-Moda-Rapido-Men-Tshirts-2331613562684861-3.jpg",
+    categoryName: "T-shirt",
+    gender: "Men",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12702792/2021/2/17/4cc48900-e450-42dc-ae7f-733c01bb4e2e1613562686869-Moda-Rapido-Men-Tshirts-2331613562684861-3.jpg",
     price: 479,
-    discount: "56",
-    rating: 5,
+    originalPrice: 899,
+    discount: "47",
+    rating: 4.3,
     inStock: true,
     fastDelivery: false,
-    quantity:1
+    quantity: 1,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     _id: uuid(),
-    title:"Men Slim Fit T-shirt",
+    title: "Men Slim Fit T-shirt",
     brand: "Wrogn Active",
-    categoryName:"T-shirt",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15076116/2021/11/15/574a6702-4232-46d1-94b0-73d808699e9e1636957236678-WROGN-ACTIVE-Men-Tshirts-6861636957236277-2.jpg",
+    categoryName: "T-shirt",
+    gender: "Men",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15076116/2021/11/15/574a6702-4232-46d1-94b0-73d808699e9e1636957236678-WROGN-ACTIVE-Men-Tshirts-6861636957236277-2.jpg",
     price: 959,
-    discount: "200",
+    originalPrice: 1599,
+    discount: "40",
     rating: 4.7,
-    inStock: false,
+    inStock: true,
     fastDelivery: true,
-    quantity:1
+    quantity: 1,
+    sizes: ["M", "L", "XL"],
   },
   {
     _id: uuid(),
-    title:"RCB Replica Jersey T-shirt",
+    title: "RCB Replica Jersey T-shirt",
     brand: "Puma",
-    categoryName:"T-shirt",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13971578/2021/4/6/248ce33e-48e7-4151-a1a0-0df964c8222c1617705074553-Puma-Men-Tshirts-8221617705073367-1.jpg",
+    categoryName: "T-shirt",
+    gender: "Men",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13971578/2021/4/6/248ce33e-48e7-4151-a1a0-0df964c8222c1617705074553-Puma-Men-Tshirts-8221617705073367-1.jpg",
     price: 1079,
-    discount: "356",
+    originalPrice: 1999,
+    discount: "46",
     rating: 4.5,
     inStock: true,
     fastDelivery: false,
-    quantity:1
+    quantity: 1,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     _id: uuid(),
-    title:"Men Blue Opaque FormalShirt",
+    title: "Men Blue Opaque FormalShirt",
     brand: "Nautica",
-    categoryName:"Shirt",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15353398/2021/10/13/849f7196-c54a-4b5d-aeea-f06c35d2c4ba1634116600300-Nautica-Men-Shirts-7321634116599779-1.jpg",
+    categoryName: "Shirt",
+    gender: "Men",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15353398/2021/10/13/849f7196-c54a-4b5d-aeea-f06c35d2c4ba1634116600300-Nautica-Men-Shirts-7321634116599779-1.jpg",
     price: 2479,
-    discount: "756",
-    rating: 3.5,
+    originalPrice: 4499,
+    discount: "45",
+    rating: 3.8,
     inStock: true,
     fastDelivery: true,
-    quantity:1
+    quantity: 1,
+    sizes: ["38", "40", "42", "44"],
   },
   {
     _id: uuid(),
-    title:"Men Slim Fit Casual Shirt",
+    title: "Men Slim Fit Casual Shirt",
     brand: "Bene Kleed",
-    categoryName:"Shirt",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/7189947/2018/8/30/aeb3002c-0114-4a6f-9509-d36adae2234d1535614137725-Bene-Kleed-Men-Off-White--Blue-Slim-Fit-Printed-Casual-Shirt-3181535614137565-5.jpg",
+    categoryName: "Shirt",
+    gender: "Men",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/7189947/2018/8/30/aeb3002c-0114-4a6f-9509-d36adae2234d1535614137725-Bene-Kleed-Men-Off-White--Blue-Slim-Fit-Printed-Casual-Shirt-3181535614137565-5.jpg",
     price: 671,
-    discount: "56",
+    originalPrice: 1499,
+    discount: "55",
     rating: 4.5,
     inStock: true,
     fastDelivery: true,
-    quantity:1
+    quantity: 1,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     _id: uuid(),
-    title:"Men Slim Fit Casual Shirt",
+    title: "Men Slim Fit Casual Shirt",
     brand: "Highlander",
-    categoryName:"Shirt",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11889114/2020/5/29/a782e7c4-f858-452a-8464-8a1585f9f26a1590729684166HIGHLANDERMenWhiteGreenSlimFitPrintedCasualShirt1.jpg",
+    categoryName: "Shirt",
+    gender: "Men",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11889114/2020/5/29/a782e7c4-f858-452a-8464-8a1585f9f26a1590729684166HIGHLANDERMenWhiteGreenSlimFitPrintedCasualShirt1.jpg",
     price: 479,
+    originalPrice: 1099,
     discount: "56",
-    rating: 5,
+    rating: 4.2,
     inStock: true,
     fastDelivery: false,
-    quantity:1
+    quantity: 1,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     _id: uuid(),
-    title:"Slim Fit Casual Shirt",
+    title: "Slim Fit Casual Shirt",
     brand: "Roadster",
-    categoryName:"Shirt",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11326670/2020/10/30/53ccf1ca-0f61-4b93-8f8d-f76c5cc47eb41604045539176IndianTerrainMenNavyBluePrintedSweatshirtShirtsRoadsterMenSh1.jpg",
+    categoryName: "Shirt",
+    gender: "Men",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11326670/2020/10/30/53ccf1ca-0f61-4b93-8f8d-f76c5cc47eb41604045539176IndianTerrainMenNavyBluePrintedSweatshirtShirtsRoadsterMenSh1.jpg",
     price: 479,
+    originalPrice: 1099,
     discount: "56",
-    rating: 5,
-    inStock: false,
+    rating: 4.1,
+    inStock: true,
     fastDelivery: true,
-    quantity:1
+    quantity: 1,
+    sizes: ["M", "L", "XL"],
   },
   {
     _id: uuid(),
-    title:"Men Skinny Fit Jeans",
+    title: "Men Skinny Fit Jeans",
     brand: "Roadster",
-    categoryName:"Trousers",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11274420/2020/7/28/05669b4c-9f00-4e0e-8a36-e6448bed48b51595932635110-Roadster-Men-Blue-Skinny-Fit-Mid-Rise-Clean-Look-Stretchable-1.jpg",
-    price: "479",
+    categoryName: "Trousers",
+    gender: "Men",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11274420/2020/7/28/05669b4c-9f00-4e0e-8a36-e6448bed48b51595932635110-Roadster-Men-Blue-Skinny-Fit-Mid-Rise-Clean-Look-Stretchable-1.jpg",
+    price: 479,
+    originalPrice: 1099,
     discount: "56",
-    rating: 5,
+    rating: 4.3,
     inStock: true,
     fastDelivery: false,
-    quantity:1
+    quantity: 1,
+    sizes: ["28", "30", "32", "34"],
   },
   {
     _id: uuid(),
-    title:"Men Straight Stretchable Jeans",
+    title: "Men Straight Stretchable Jeans",
     brand: "Tommy Hilfiger",
-    categoryName:"Trousers",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14188430/2021/8/28/080d514e-5c9a-41a3-ab97-4c4aebaaaf541630127146716TommyHilfigerMenNavyBlueRelaxedStraightFitStretchableJeans1.jpg",
-    price: 449,
-    discount: "56",
-    rating: 5,
+    categoryName: "Trousers",
+    gender: "Men",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14188430/2021/8/28/080d514e-5c9a-41a3-ab97-4c4aebaaaf541630127146716TommyHilfigerMenNavyBlueRelaxedStraightFitStretchableJeans1.jpg",
+    price: 2449,
+    originalPrice: 4999,
+    discount: "51",
+    rating: 4.6,
     inStock: true,
     fastDelivery: false,
-    quantity:1
+    quantity: 1,
+    sizes: ["30", "32", "34", "36"],
   },
   {
     _id: uuid(),
-    title:"Men Skinny Fit Jeans",
+    title: "Men Skinny Fit Jeans",
     brand: "IVOC",
-    categoryName:"Trousers",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11305354/2020/1/28/d7602311-fc85-4c3c-89af-e6961c334b611580191857367-IVOC-Mens-Jeans-5361580191854374-1.jpg",
+    categoryName: "Trousers",
+    gender: "Men",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11305354/2020/1/28/d7602311-fc85-4c3c-89af-e6961c334b611580191857367-IVOC-Mens-Jeans-5361580191854374-1.jpg",
     price: 479,
+    originalPrice: 1099,
     discount: "56",
-    rating: 5,
+    rating: 4.2,
     inStock: true,
     fastDelivery: false,
-    quantity:1
+    quantity: 1,
+    sizes: ["28", "30", "32", "34"],
   },
   {
     _id: uuid(),
-    title:"Men Chinos",
+    title: "Men Chinos",
     brand: "Roadster",
-    categoryName:"Trousers",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/6817881/2018/11/19/82465971-50e8-4e36-b9f0-ee9fa20127f41542624379231-Roadster-Men-Trousers-5631542624379031-1.jpg",
+    categoryName: "Trousers",
+    gender: "Men",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/6817881/2018/11/19/82465971-50e8-4e36-b9f0-ee9fa20127f41542624379231-Roadster-Men-Trousers-5631542624379031-1.jpg",
     price: 779,
-    discount: "56",
+    originalPrice: 1499,
+    discount: "48",
     rating: 3.7,
-    inStock: false,
+    inStock: true,
     fastDelivery: true,
-    quantity:1
+    quantity: 1,
+    sizes: ["30", "32", "34", "36"],
   },
   {
     _id: uuid(),
-    title:"Men Slim Fit Trousers",
+    title: "Men Slim Fit Trousers",
     brand: "Rare Rabbit",
-    categoryName:"Trousers",
-    image:
-      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17379788/2022/3/3/adeb0621-9410-4d0f-816c-7934159c07651646327542678RARERABBITMenGreyTailoredSlimFitTrousers3.jpg",
+    categoryName: "Trousers",
+    gender: "Men",
+    image: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17379788/2022/3/3/adeb0621-9410-4d0f-816c-7934159c07651646327542678RARERABBITMenGreyTailoredSlimFitTrousers3.jpg",
     price: 2999,
-    discount: "156",
+    originalPrice: 4999,
+    discount: "40",
     rating: 3.9,
     inStock: true,
     fastDelivery: true,
-    quantity:1
-  }
+    quantity: 1,
+    sizes: ["30", "32", "34", "36"],
+  },
+
+  // --- EXPANDED MEN APPAREL (22 to 50) ---
+  ...Array.from({ length: 28 }, (_, i) => {
+    const brands = ["Puma", "Nike", "H&M", "HRX by Hrithik Roshan", "Roadster", "Highlander", "Tommy Hilfiger"];
+    const types = ["T-shirt", "Shirt", "Shorts", "Trousers"];
+    const type = types[i % types.length];
+    const brand = brands[i % brands.length];
+    const basePrice = 499 + (i * 70);
+    const origPrice = Math.round(basePrice * 1.8);
+    const discount = Math.round(((origPrice - basePrice) / origPrice) * 100).toString();
+    const imgs = [
+      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=600&q=80",
+    ];
+
+    return {
+      _id: uuid(),
+      title: `${brand} Premium Essential ${type} #${i + 1}`,
+      brand,
+      categoryName: type,
+      gender: "Men",
+      image: imgs[i % imgs.length],
+      price: basePrice,
+      originalPrice: origPrice,
+      discount,
+      rating: +(4.0 + (i % 9) * 0.1).toFixed(1),
+      inStock: i % 7 !== 0,
+      fastDelivery: i % 2 === 0,
+      quantity: 1,
+      sizes: ["S", "M", "L", "XL"],
+    };
+  }),
+
+  // --- EXPANDED WOMEN APPAREL (51 to 75) ---
+  ...Array.from({ length: 25 }, (_, i) => {
+    const brands = ["H&M", "Anouk", "Puma", "Roadster", "Highlander", "Nautica"];
+    const types = ["Shirt", "T-shirt", "Trousers", "Shorts"];
+    const type = types[i % types.length];
+    const brand = brands[i % brands.length];
+    const basePrice = 699 + (i * 80);
+    const origPrice = Math.round(basePrice * 2.0);
+    const discount = Math.round(((origPrice - basePrice) / origPrice) * 100).toString();
+    const imgs = [
+      "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80",
+    ];
+
+    return {
+      _id: uuid(),
+      title: `${brand} Chic Women's ${type === "Shirt" ? "Dress & Kurti" : type} #${i + 1}`,
+      brand,
+      categoryName: type,
+      gender: "Women",
+      image: imgs[i % imgs.length],
+      price: basePrice,
+      originalPrice: origPrice,
+      discount,
+      rating: +(4.2 + (i % 7) * 0.1).toFixed(1),
+      inStock: true,
+      fastDelivery: i % 3 === 0,
+      quantity: 1,
+      sizes: ["XS", "S", "M", "L"],
+    };
+  }),
+
+  // --- EXPANDED KIDS COLLECTION (76 to 90) ---
+  ...Array.from({ length: 15 }, (_, i) => {
+    const brands = ["H&M", "HRX by Hrithik Roshan", "Puma", "Roadster"];
+    const types = ["Shorts", "T-shirt", "Shirt"];
+    const type = types[i % types.length];
+    const brand = brands[i % brands.length];
+    const basePrice = 399 + (i * 50);
+    const origPrice = Math.round(basePrice * 1.7);
+    const discount = Math.round(((origPrice - basePrice) / origPrice) * 100).toString();
+    const imgs = [
+      "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?auto=format&fit=crop&w=600&q=80",
+    ];
+
+    return {
+      _id: uuid(),
+      title: `${brand} Junior Active ${type} Set #${i + 1}`,
+      brand,
+      categoryName: type,
+      gender: "Kids",
+      image: imgs[i % imgs.length],
+      price: basePrice,
+      originalPrice: origPrice,
+      discount,
+      rating: +(4.3 + (i % 6) * 0.1).toFixed(1),
+      inStock: true,
+      fastDelivery: true,
+      quantity: 1,
+      sizes: ["3-4Y", "5-6Y", "7-8Y", "9-10Y"],
+    };
+  }),
+
+  // --- EXPANDED HOME & LIVING (91 to 105) ---
+  ...Array.from({ length: 15 }, (_, i) => {
+    const brands = ["Portico New York", "Home Centre", "Spaces"];
+    const brand = brands[i % brands.length];
+    const basePrice = 599 + (i * 120);
+    const origPrice = Math.round(basePrice * 1.9);
+    const discount = Math.round(((origPrice - basePrice) / origPrice) * 100).toString();
+    const imgs = [
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1616627547584-bf28cee262db?auto=format&fit=crop&w=600&q=80",
+    ];
+
+    return {
+      _id: uuid(),
+      title: `${brand} Luxury Home Living Collection #${i + 1}`,
+      brand,
+      categoryName: "Trousers",
+      gender: "Home & Living",
+      image: imgs[i % imgs.length],
+      price: basePrice,
+      originalPrice: origPrice,
+      discount,
+      rating: +(4.4 + (i % 5) * 0.1).toFixed(1),
+      inStock: true,
+      fastDelivery: i % 2 === 0,
+      quantity: 1,
+      sizes: ["Standard"],
+    };
+  }),
 ];

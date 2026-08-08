@@ -1,19 +1,126 @@
-:root{
-    --black:black;
-    --white:white;
-    --darkgray:darkgray;
-    --orange:orange;
-    --blue:blue;
-    --grey:grey;
-    --aqua:aqua;
+.myntra-footer {
+  background-color: #fafbfc;
+  border-top: 1px solid #eaeaec;
+  padding: 40px 20px 20px;
+  color: #282c3f;
+  margin-top: 40px;
 }
-.footer-containet {
-    background-color: rgb(44, 117, 181);
-    color: var(--white);
-    display: flex;
-    justify-content: space-evenly;
-    border-top: 2px solid;
-    line-height: 2rem;
-    padding: 0 0 1rem  0;
+
+.footer-guarantees {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  border-bottom: 1px solid #eaeaec;
+  padding-bottom: 24px;
 }
+
+.guarantee-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #282c3f;
+}
+
+.guarantee-icon {
+  font-size: 28px;
+  color: #ff3f6c;
+  display: flex;
+  align-items: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.footer-col h3 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #282c3f;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li {
+  margin-bottom: 8px;
+}
+
+.footer-col a {
+  font-size: 13px;
+  color: #696e79;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-col a:hover {
+  color: #282c3f;
+  font-weight: 600;
+}
+
+.app-subtitle {
+  font-size: 13px;
+  color: #696e79;
+  margin-bottom: 12px;
+}
+
+.app-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.store-btn {
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.social-heading {
+  margin-top: 16px;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.popular-tags {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #696e79;
+}
+
+.footer-copyright {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #696e79;
+}
+
+.footer-copyright p {
+  margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+  .footer-guarantees {
+    flex-direction: column;
+  }
+}
+
 
